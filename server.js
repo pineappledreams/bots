@@ -22,6 +22,7 @@ app.use(express.static('public'));
 
 var dailySICP = pickrandom.random_from_array(SICP.quotes)
 
+
 app.all("/" + process.env.BOT_ENDPOINT, function (req, res) {
   /* This code should 1. take code from pickrandom.js (doing this only to see if I can make multi-file programs)*/
   T.post('statuses/update', { status: dailySICP }, function(err, data, response) {
